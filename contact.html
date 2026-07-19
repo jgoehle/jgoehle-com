@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Notify List | John Goehle — ASC Books</title>
+  <meta name="description" content="Contact John Goehle for ASC book orders, join the notify list for the 2026 editions, bulk and institutional purchases, speaking inquiries, or a consultation.">
+  <link rel="canonical" href="https://jgoehle.com/contact.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="/">
+        <span class="brand__mark">JG</span>
+        <span class="brand__text">
+          <span class="brand__name">John Goehle</span>
+          <span class="brand__tag">ASC Books &amp; Resources</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/survey-guide.html">Survey Guide</a></li>
+        <li><a href="/asc-governance.html">Governance</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="pagehead">
+    <div class="container">
+      <p class="eyebrow">Get in Touch</p>
+      <h1>Contact &amp; Notify List</h1>
+      <p>Join the notify list for the 2026 editions, ask about the books, or request bulk orders, speaking, or a consultation.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div>
+        <h2>Send a message</h2>
+        <p class="lead">Fill out the form and your message will be delivered straight to John's inbox.</p>
+
+        <!-- Netlify Forms: data-netlify enables capture; honeypot guards against spam -->
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="form-grid">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+          </p>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="reason">I'm contacting about</label>
+            <select id="reason" name="reason">
+              <option>Notify me when a new edition is available</option>
+              <option>A book question</option>
+              <option>Bulk / institutional order</option>
+              <option>Speaking inquiry</option>
+              <option>Consultation request</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="book">Book of interest</label>
+            <select id="book" name="book">
+              <option>Any / all titles</option>
+              <option>Survey Guide 2026 Edition</option>
+              <option>ASC Governance Second Edition</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn btn--primary btn--lg">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3 class="mt-0">Direct contact</h3>
+        <p>Prefer to reach out directly? You can call or email anytime.</p>
+        <ul class="meta-list" style="margin-top:0">
+          <li><span>Phone</span><span><a href="tel:+15855941167">585-594-1167</a></span></li>
+          <li><span>Email</span><span><a href="mailto:jgoehle@gmail.com">jgoehle@gmail.com</a></span></li>
+          <li><span>Podcast</span><span><a href="https://ascpodcast.com/" target="_blank" rel="noopener">ascpodcast.com</a></span></li>
+        </ul>
+        <h3 style="margin-top:1.4em">Available now on Amazon</h3>
+        <p class="mb-0">While the 2026 editions are in production, the current editions are available today:</p>
+        <div class="btn-row" style="margin-top:14px">
+          <a class="btn btn--solid" href="https://www.amazon.com/Survey-Guide-ASCs-Conditions-Interpretive/dp/1678163627" target="_blank" rel="noopener">Survey Guide (2020)</a>
+          <a class="btn btn--solid" href="https://www.amazon.com/Ambulatory-Surgery-Center-Governance-Governing/dp/1329252764" target="_blank" rel="noopener">Governance (1st Ed.)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/" style="margin-bottom:14px">
+            <span class="brand__mark">JG</span>
+            <span class="brand__text">
+              <span class="brand__name" style="color:#fff">John Goehle</span>
+              <span class="brand__tag" style="color:#8ba3bd">ASC Books &amp; Resources</span>
+            </span>
+          </a>
+          <p style="max-width:38ch">Professional books and resources for Ambulatory Surgery Center compliance, governance, and operations.</p>
+        </div>
+        <div>
+          <h4>Books</h4>
+          <ul class="footer-links">
+            <li><a href="/survey-guide.html">The Survey Guide for ASCs</a></li>
+            <li><a href="/asc-governance.html">ASC Governance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="https://ascpodcast.com/" target="_blank" rel="noopener">The ASC Podcast</a></li>
+            <li><a href="https://ah-strategies.com/" target="_blank" rel="noopener">Ambulatory Healthcare Strategies</a></li>
+            <li><a href="https://conferences.asc-central.com/" target="_blank" rel="noopener">ASC Central</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 John Goehle. All rights reserved.</span>
+        <span>jgoehle.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var t = document.querySelector('.nav-toggle');
+    var m = document.querySelector('.nav-links');
+    if (t) t.addEventListener('click', function () {
+      var open = m.classList.toggle('open');
+      t.setAttribute('aria-expanded', open);
+    });
+
+    // Pre-select reason/book from query string (e.g., /contact.html?book=...&reason=...)
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      function setSelect(id, val) {
+        if (!val) return;
+        var sel = document.getElementById(id);
+        if (!sel) return;
+        for (var i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].value === val) { sel.selectedIndex = i; return; }
+        }
+      }
+      setSelect('reason', params.get('reason'));
+      setSelect('book', params.get('book'));
+    })();
+  </script>
+</body>
+</html>
