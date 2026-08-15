@@ -7,8 +7,10 @@
   --navy:    #0f2c4d;
   --navy-2:  #163a63;
   --blue:    #1f5f9e;
+  --link:    #4576a6;   /* AA link blue on light bg */
   --blue-lt: #e8f0f9;
   --gold:    #c8a24a;
+  --gold-ink:#8a6f33;   /* AA-contrast gold for small text on light bg */
   --ink:     #1d2733;
   --muted:   #5a6878;
   --line:    #e2e8f0;
@@ -47,7 +49,7 @@ h3 { font-size: 1.25rem; }
 
 p { margin: 0 0 1.1em; }
 
-a { color: var(--blue); text-decoration: none; }
+a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 img { max-width: 100%; display: block; }
@@ -67,7 +69,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.12em;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--gold-ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin-bottom: 0.6em;
 }
@@ -156,7 +158,7 @@ img { max-width: 100%; display: block; }
 .hero .lead { color: #cfe0f1; }
 .hero__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
 .hero__books { display: flex; gap: 20px; justify-content: center; }
-.hero__books .cover { width: 190px; box-shadow: 0 14px 40px rgba(0,0,0,.35); transform: rotate(-3deg); }
+.hero__books .cover { width: 180px; box-shadow: 0 14px 40px rgba(0,0,0,.35); transform: rotate(-3deg); }
 .hero__books .cover:last-child { transform: rotate(3deg); margin-top: 28px; }
 
 /* ---------- Book cards ---------- */
@@ -220,6 +222,7 @@ img { max-width: 100%; display: block; }
 }
 .pagehead h1 { color: #fff; }
 .pagehead p { color: #cfe0f1; margin: 0; }
+.pagehead .eyebrow, .hero .eyebrow { color: #e3c878; }
 
 /* ---------- Stats / trust band ---------- */
 .band { background: var(--blue-lt); }
@@ -251,7 +254,7 @@ img { max-width: 100%; display: block; }
   margin-top: 0;
 }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
-.site-footer h4 { color: #fff; font-family: -apple-system, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: .1em; }
+.site-footer :is(h2,h3,h4) { color: #fff; font-family: -apple-system, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: .1em; }
 .site-footer a { color: #c4d3e3; }
 .site-footer a:hover { color: #fff; }
 .footer-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: 0.95rem; }
@@ -295,7 +298,7 @@ img { max-width: 100%; display: block; }
   border-radius: 999px;
   vertical-align: middle;
 }
-.badge--soon { background: #fdf1d6; color: #8a6d1c; border: 1px solid #ecd9a4; }
+.badge--soon { background: #fdf1d6; color: #876a1b; border: 1px solid #ecd9a4; }
 .badge--avail { background: var(--blue-lt); color: var(--blue); border: 1px solid #cfe0f1; }
 .badge--new { background: #e7f6ec; color: #1d7a44; border: 1px solid #c2e6cf; }
 
@@ -347,3 +350,40 @@ img { max-width: 100%; display: block; }
   .stats { gap: 28px; }
   .footer-bottom { flex-direction: column; }
 }
+
+/* ---------- Accessibility: skip link ---------- */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:1000;padding:12px 18px;
+  background:#fff;color:#111;font-weight:700;text-decoration:none;
+  border:2px solid currentColor;border-radius:0 0 8px 0}
+.skip-link:focus{left:0}
+:focus-visible{outline:3px solid currentColor;outline-offset:2px}
+
+.h-card { font-size: 1.25rem; }
+
+/* Links inside running text must not rely on colour alone (WCAG 1.4.1). */
+p a, .prose li a, blockquote a, figcaption a, .form-note a{text-decoration:underline}
+.btn, .nav-links a, .site-footer nav a{text-decoration:none}
+
+.site-footer .footer-bottom a, .site-footer-bottom a, footer span a{text-decoration:underline}
+
+/* ---------- Responsive safety net ----------
+   Grid and flex children default to min-width:auto, so a wide child (a long word,
+   a nowrap label, a fixed-width image) can force a track wider than the viewport
+   and scroll the whole page sideways. These caps stop that at the source. */
+.grid-2 > *, .grid-3 > *, .form-grid > *, .hero__grid > *,
+[class*="-grid"] > * { min-width: 0; }
+img, video, iframe, table { max-width: 100%; }
+input, select, textarea { max-width: 100%; box-sizing: border-box; }
+select { width: 100%; }
+pre, code { overflow-wrap: anywhere; }
+
+@media (max-width: 700px) {
+  /* The covers are rotated, so their bounding boxes are wider than their width.
+     Leave room for that as well as the container padding. */
+  .hero__books { gap: 12px; max-width: 100%; }
+  .hero__books .cover { width: min(38vw, 180px); }
+}
+
+/* Two-up field rows must stack on narrow screens. */
+.pair-grid { display: grid; grid-template-columns: 1fr 1fr; }
+@media (max-width: 560px) { .pair-grid { grid-template-columns: 1fr; } }

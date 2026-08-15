@@ -6,12 +6,12 @@
   <title>Page Not Found | John Goehle — ASC Books</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css">
-  <link rel="canonical" href="https://jgoehle.com/404.html">
+  <link rel="canonical" href="https://jgoehle.com/404">
   <meta name="robots" content="noindex, follow">
   <meta property="og:title" content="Page Not Found | John Goehle — ASC Books">
   <meta property="og:description" content="">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jgoehle.com/404.html">
+  <meta property="og:url" content="https://jgoehle.com/404">
   <meta property="og:site_name" content="John Goehle — ASC Books & Resources">
   <meta property="og:image" content="https://jgoehle.com/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -19,8 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <nav class="nav">
+    <nav class="nav" aria-label="Primary">
       <a class="brand" href="/">
         <span class="brand__mark">JG</span>
         <span class="brand__text">
@@ -30,14 +32,16 @@
       </a>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/survey-guide.html">Survey Guide</a></li>
-        <li><a href="/asc-governance.html">Governance</a></li>
+        <li><a href="/survey-guide">Survey Guide</a></li>
+        <li><a href="/asc-governance">Governance</a></li>
         <li><a href="https://egd-consulting.com/store">Store</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
   </header>
+
+  <main id="main">
 
   <section class="section">
     <div class="container text-center center-narrow">
@@ -46,16 +50,19 @@
       <p class="lead" style="margin:0 auto 28px">The page you're looking for may have moved. Try one of these instead:</p>
       <div class="btn-row" style="justify-content:center">
         <a class="btn btn--primary" href="/">Home</a>
-        <a class="btn btn--solid" href="/survey-guide.html">Survey Guide</a>
-        <a class="btn btn--solid" href="/asc-governance.html">Governance</a>
+        <a class="btn btn--solid" href="/survey-guide">Survey Guide</a>
+        <a class="btn btn--solid" href="/asc-governance">Governance</a>
       </div>
     </div>
   </section>
 
+  </main>
+
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom" style="border:none;margin:0;padding:0;justify-content:center">
-        <span>&copy; 2026 John Goehle. All rights reserved. · jgoehle.com</span>
+        <span><a href="/privacy">Privacy</a> &middot; &copy; 2026 John Goehle. All rights reserved. · jgoehle.com</span>
       </div>
     </div>
   </footer>

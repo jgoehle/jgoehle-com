@@ -1,7 +1,15 @@
-# Redirect rules for jgoehle.com
-# Force the apex/canonical host (Netlify also handles www automatically once both domains are added).
+# Canonical URL enforcement — .html always 301s to the clean URL.
+# The ! forces the rule to win over the on-disk file of the same name.
+
+/about.html    /about    301!
+/asc-governance.html    /asc-governance    301!
+/contact.html    /contact    301!
+/index.html    /    301!
+/privacy.html    /privacy    301!
+/survey-guide.html    /survey-guide    301!
+/thank-you.html    /thank-you    301!
 
 # Friendly short URLs
-/survey        /survey-guide.html       301
-/governance    /asc-governance.html     301
-/books         /#books                  301
+/survey        /survey-guide     301
+/governance    /asc-governance   301
+/books         /#books           301
