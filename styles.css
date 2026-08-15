@@ -157,7 +157,9 @@ img { max-width: 100%; display: block; }
 .hero h1 { color: #fff; font-size: 2.8rem; max-width: 16ch; }
 .hero .lead { color: #cfe0f1; }
 .hero__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
-.hero__books { display: flex; gap: 20px; justify-content: center; }
+/* align-items defaults to stretch, which forces the shorter cover to the
+   taller one's height and distorts it. Pin them to the start instead. */
+.hero__books { display: flex; gap: 20px; justify-content: center; align-items: flex-start; }
 .hero__books .cover { width: 180px; box-shadow: 0 14px 40px rgba(0,0,0,.35); transform: rotate(-3deg); }
 .hero__books .cover:last-child { transform: rotate(3deg); margin-top: 28px; }
 
@@ -387,3 +389,11 @@ pre, code { overflow-wrap: anywhere; }
 /* Two-up field rows must stack on narrow screens. */
 .pair-grid { display: grid; grid-template-columns: 1fr 1fr; }
 @media (max-width: 560px) { .pair-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Intrinsic image dimensions: preserve aspect ratio ----------
+   The width/height attributes we set to stop layout shift are also
+   presentational hints, so a CSS rule that sets only `width` leaves the
+   attribute height in force and squashes the image. :where() gives this
+   zero specificity, so it overrides the presentational hint but still
+   loses to any real rule that sets height on purpose. */
+:where(img[width][height]) { height: auto; }
