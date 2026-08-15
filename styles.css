@@ -160,7 +160,10 @@ img { max-width: 100%; display: block; }
 /* align-items defaults to stretch, which forces the shorter cover to the
    taller one's height and distorts it. Pin them to the start instead. */
 .hero__books { display: flex; gap: 20px; justify-content: center; align-items: flex-start; }
-.hero__books .cover { width: 180px; box-shadow: 0 14px 40px rgba(0,0,0,.35); transform: rotate(-3deg); }
+/* The two books have different trim sizes (Survey Guide 8.5x11, Governance 6x9),
+   so matching their WIDTH makes one look squat. Match height instead — books
+   standing side by side — and let width follow the real proportions. */
+.hero__books .cover { height: 300px; width: auto; box-shadow: 0 14px 40px rgba(0,0,0,.35); transform: rotate(-3deg); }
 .hero__books .cover:last-child { transform: rotate(3deg); margin-top: 28px; }
 
 /* ---------- Book cards ---------- */
@@ -380,10 +383,10 @@ select { width: 100%; }
 pre, code { overflow-wrap: anywhere; }
 
 @media (max-width: 700px) {
-  /* The covers are rotated, so their bounding boxes are wider than their width.
-     Leave room for that as well as the container padding. */
+  /* Rotated boxes are wider than the images, so leave room for that and the
+     container padding. Height-based sizing keeps both covers true to shape. */
   .hero__books { gap: 12px; max-width: 100%; }
-  .hero__books .cover { width: min(38vw, 180px); }
+  .hero__books .cover { height: min(46vw, 240px); width: auto; }
 }
 
 /* Two-up field rows must stack on narrow screens. */
